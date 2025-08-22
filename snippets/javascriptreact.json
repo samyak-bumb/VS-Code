@@ -1,0 +1,245 @@
+{
+  "Import React": {
+    "prefix": "imr",
+    "body": ["import React from 'react';\n"]
+  },
+
+  "Import React and Component": {
+    "prefix": "imrc",
+    "body": ["import React, { Component } from 'react';\n"]
+  },
+
+  "Import ReactDOM": {
+    "prefix": "imrd",
+    "body": ["import ReactDOM from 'react-dom';"]
+  },
+
+  "Import React, { useState }": {
+    "prefix": "imrs",
+    "body": [
+      "import React, { useState } from 'react';\n"
+    ]
+  },
+
+  "Import React, { useState, useEffect }": {
+    "prefix": "imrse",
+    "body": [
+      "import React, { useState, useEffect } from 'react';\n"
+    ]
+  },
+
+  "Import PropTypes": {
+    "prefix": "impt",
+    "body": ["import PropTypes from 'prop-types';"]
+  },
+
+  "Import Pure Component": {
+    "prefix": "impc",
+    "body": ["import React, { PureComponent } from 'react';\n"]
+  },
+
+  "Class Component": {
+    "prefix": "cc",
+    "body": [
+      "class $1 extends Component {",
+      "\tstate = { $2 } ",
+      "\trender() { ",
+      "\t\treturn ($0);",
+      "\t}",
+      "}\n\t",
+      "export default $1;"
+    ]
+  },
+
+  "Class Pure Component": {
+    "prefix": "cpc",
+    "body": [
+      "class $1 extends PureComponent {",
+      "\tstate = { $2 }",
+      "\trender() { ",
+      "\t\treturn ( $0 );",
+      "\t}",
+      "}\n\t",
+      "export default $1;"
+    ]
+  },
+
+  "Class Component With Constructor": {
+    "prefix": "ccc",
+    "body": [
+      "class $1 extends Component {",
+      "\tconstructor(props) {",
+      "\t\tsuper(props);",
+      "\t}",
+      "\tstate = { $2 }",
+      "\trender() { ",
+      "\t\treturn ( $0 );",
+      "\t}",
+      "}",
+      " ",
+      "export default $1;"
+    ]
+  },
+
+  "Stateless Function Component": {
+    "prefix": "sfc",
+    "body": [
+      "const $1 = ($2) => {",
+      "\treturn ( $0 );",
+      "}",
+      " ",
+      "export default $1;"
+    ]
+  },
+
+  "Function Syntax Component": {
+    "prefix": "ffc",
+    "body": [
+      "function $1($2) {",
+      "\treturn ( $0 );",
+      "}",
+      "",
+      "export default $1;"
+    ]
+  },
+
+  "componentDidMount": {
+    "prefix": "cdm",
+    "body": ["componentDidMount() {", "\t$0", "}"]
+  },
+
+  "useEffect": {
+    "prefix": "uef",
+    "body": [
+      "useEffect(() => {",
+      "\t$1",
+      "}, []);"
+    ]
+  },
+
+  "componentWillMount": {
+    "prefix": "cwm",
+    "body": ["//WARNING! To be deprecated in React v17. Use componentDidMount instead.", "componentWillMount() {", "\t$0", "}"]
+  },
+
+  "componentWillReceiveProps": {
+    "prefix": "cwrp",
+    "body": ["//WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.", "componentWillReceiveProps(nextProps) {", "\t$0", "}"]
+  },
+
+  "getDerivedStateFromProps": {
+    "prefix": "gds",
+    "body": ["static getDerivedStateFromProps(nextProps, prevState) {", "\t$0", "}"]
+  },
+
+  "shouldComponentUpdate": {
+    "prefix": "scu",
+    "body": ["shouldComponentUpdate(nextProps, nextState) {", "\t$0", "}"]
+  },
+
+  "componentWillUpdate": {
+    "prefix": "cwu",
+    "body": ["//WARNING! To be deprecated in React v17. Use componentDidUpdate instead.", "componentWillUpdate(nextProps, nextState) {", "\t$0", "}"]
+  },
+
+  "componentDidUpdate": {
+    "prefix": "cdu",
+    "body": ["componentDidUpdate(prevProps, prevState) {", "\t$0", "}"]
+  },
+
+  "componentWillUnmount": {
+    "prefix": "cwun",
+    "body": ["componentWillUnmount() {", "\t$0", "}"]
+  },
+
+  "componentDidCatch": {
+    "prefix": "cdc",
+    "body": ["componentDidCatch(error, info) {", "\t$0", "}"]
+  },
+
+  "getSnapshotBeforeUpdate": {
+    "prefix": "gsbu",
+    "body": ["getSnapshotBeforeUpdate(prevProps, prevState) {", "\t$0", "}"]
+  },
+
+  "setState": {
+    "prefix": "ss",
+    "body": ["this.setState({ $1: $2 });"]
+  },
+
+  "Functional setState": {
+    "prefix": "ssf",
+    "body": ["this.setState(prevState => {", "\treturn { $1: prevState.$1 };", "});"]
+  },
+
+  "Declare a new state variable using State Hook": {
+    "prefix": "usf",
+    "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"]
+  },
+
+  "render": {
+    "prefix": "ren",
+    "body": ["render() {", "\treturn (", "\t\t $0", "\t);", "}"]
+  },
+
+  "Render Prop": {
+    "prefix": "rprop",
+    "body": [
+      "class $1 extends Component {",
+      "\tstate = { $2: $3 }",
+      "\trender() { ",
+      "\t\treturn this.props.render({",
+      "\t\t\t$2: this.state.$2",
+      "\t\t});",
+      "\t}",
+      "}"\n\t,
+      "export default $1;"
+    ]
+  },
+
+  "Higher Order Component": {
+    "prefix": "hoc",
+    "body": [
+      "function $1($2) {",
+      "\treturn class extends Component {",
+      "\t\tconstructor(props) {",
+      "\t\t\tsuper(props);",
+      "\t\t}",
+      " ",
+      "\t\trender() {",
+      "\t\t\treturn <$2 {...this.props} $0/>",
+      "\t\t}",
+      "\t}",
+      "}"
+    ]
+  },
+
+  "Context Provider": {
+    "prefix": "cp",
+    "body": [
+      "export const $1 = React.createContext();\n",
+      "const $1Provider = (props) => {",
+      "\t// Initial Provider State",
+      "\tconst state = {};\n",
+      "\t// Reducer Function",
+      "\tconst $2 = (state, action) => {",
+      "\t\t",
+      "\t};\n",
+      "\treturn (",
+      "\t\t<$1.Provider value={{state: state, $2}}>",
+      "\t\t\t{props.children}",
+      "\t\t</$1.Provider>",
+      "\t);\n}\n",
+      "",
+      "export default $1Provider;"
+    ]
+  },
+
+  "Class Property Function": {
+    "prefix": "cpf",
+    "body": [
+      "$1 = (${2:e${TM_SELECTED_TEXT}}) => {",
+      "\t $0\n};"
+    ]
+  }
+}

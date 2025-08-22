@@ -1,0 +1,60 @@
+// Created/Written by Tungsten
+{
+  "HTML Boilerplate": {
+    "prefix": "q",
+    "body": "<!DOCTYPE html>\n<html lang=\"en\">\n\t<!-- Created/Designed by Tungsten -->\n\t<head>\n\t\t<meta charset=\"UTF-8\">\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t\t<meta name=\"copyright\" content=\"Tungsten\">\n\n\t\t<title>${1:} By Tungsten</title>\n\n\t\t<link rel=\"stylesheet\" href=\"./style.css\">\n\t</head>\n\n\t<body>\n\t\t${0:.}\n\t</body>\n</html>\n"
+  },
+  "Link Src": {
+    "prefix": "lin",
+    "body": "<link rel=\"stylesheet\" href=\"./${0:style}.css\">"
+  },
+  "Script Src": {
+    "prefix": "sc",
+    "body": "<script src=\"./${0:script}.js\"></script>"
+  },
+  "Clean Comment": {
+    "prefix": "comment",
+    "body": "\n<!--=============== ${0:Name} ===============-->\n"
+  },
+  "address": {
+    "prefix": "address",
+    "body": "<address>\n\t$0\n</address>"
+  },
+  "article": {
+    "prefix": "article",
+    "body": "<article>\n\t$1\n</article>"
+  },
+  "div": {
+    "prefix": "div",
+    "body": "<div>\n\t$0\n</div>"
+  },
+  "header": {
+    "prefix": "header",
+    "body": "<header>\n\t$0\n</header>"
+  },
+  "menu": {
+    "prefix": "menu",
+    "body": "<menu>\n\t$0\n</menu>"
+  },
+  "nav": {
+    "prefix": "nav",
+    "body": "<nav>\n\t$0\n</nav>"
+  },
+  "style": {
+    "prefix": "style:link",
+    "body": "<style>\n\t*{\n\t\tmargin: 0;\n\t\tpadding: 0;\n\t\tbox-sizing: border-box;\n\t}\n\t$0\n</style>"
+  },
+  "vdo": {
+    "prefix": "vdo",
+    "body": "<video controls height=\"220\" width=\"390\">\n\t<source src=\"./assets/media/video.mp4\" type=\"video/mp4\">\n</video>"
+  },
+  "Class": {
+    "prefix": "c",
+    "body": "class=\"$0\""
+  },
+  // PHP
+  "Boilerplate": {
+    "prefix": "qphp",
+    "body": "<?php\n\t$0\n?>\n<!-- PHP Code -->"
+  },
+}

@@ -1,0 +1,263 @@
+// Created/Written by Tungsten
+{
+  "Get Value of a brower Cookie": {
+    "prefix": "browerCookie",
+    "body": "const cookie = name => `; ${document.cookie}`.split(`; ${name}=`).pop().split(';').shift();\n\ncookie('_ga');"
+  },
+  "Convert RGB to Hex": {
+    "prefix": "rgbToHex",
+    "body": "const rgbToHex = (r, g, b) =>\n\t\"#\" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);\n\nrgbToHex(${1:255}, ${2:255}, ${3:255});"
+  },
+  "Copy to Clipboard": {
+    "prefix": "copyToClipboard",
+    "body": "const copyToClipboard = (text) => navigator.clipboard.writeText(text);\n\ncopyToClipboard(\"${0:Jai Jinendra}\");"
+  },
+  "Capitalise a String": {
+    "prefix": "capitalizeString",
+    "body": "const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1)\n\ncapitalize(\"${0:jai Jinendra}\")"
+  },
+  "Go Back to the Previous Page": {
+    "prefix": "previousPage",
+    "body": "const navigateBack = () => history.back();"
+  },
+  "Sleep Function": {
+    "prefix": "sleepFunction",
+    "body": "const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));"
+  },
+  "Get Selected Text": {
+    "prefix": "getSelectedTxt",
+    "body": "const SelectedTxt = () => window.getSelection().toString();\n\ngetSelectedTxt();"
+  },
+  "Find the number of days between two days": {
+    "prefix": "dayDiff",
+    "body": "const dayDiff = (date1, date2) => Math.ceil(Math.abs(date1.getTime() - date2.getTime()) / 86400000)\n\ndayDiff(new Date(\"20${1:23}-${2:10}-${3:21}\"), new Date(\"20${4:24}-${5:10}-${6:22}\"))"
+  },
+  "Is Element Focused?": {
+    "prefix": "hasFocus?",
+    "body": "const hasFocus = (element) => element === document.activeElement;"
+  },
+  "Clear All Cookies": {
+    "prefix": "clearCookie",
+    "body": "const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`));"
+  },
+  "Generate Random Hex": {
+    "prefix": "randomHex",
+    "body": "const randomHex = () => `#${Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, \"0\")}`;\n\nconsole.log(randomHex());"
+  },
+  "Check if a number is even or odd": {
+    "prefix": "evenOdd",
+    "body": "const isEven = num => num % 2 === 0;\n\nconsole.log(isEven(${1:2}));"
+  },
+  "Find Average of Numbers": {
+    "prefix": "averageNu",
+    "body": "const average = (...args) => args.reduce((a, b) => a + b) / args.length;\n\naverage(${1:1}, ${2:2}, ${3:3}, ${4:4});"
+  },
+  "Scroll to Top": {
+    "prefix": "goToTop",
+    "body": "const goToTop = () => window.scrollTo(0, 0);\n\ngoToTop();"
+  },
+  "Scroll to Top smooth": {
+    "prefix": "goToTopSmooth",
+    "body": "const scrollToTop = () => {\n\tconst c = document.documentElement.scrollTop || document.body.scrollTop;\n\tif (c > 0) {\n\t\twindow.requestAnimationFrame(scrollToTop);\n\t\twindow.scrollTo(0, c - c / 8);\n\t}\n};\n\nscrollToTop();"
+  },
+  "Get the Current scroll position": {
+    "prefix": "getScrollPosition",
+    "body": "const getScrollPosition = (el = window) => ({\n\tx: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,\n\ty: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop\n});\n\ngetScrollPosition();"
+  },
+  "Reverse a string": {
+    "prefix": "reverseString",
+    "body": "const reverse = str => str.split('').reverse().join('');\n\nreverse('Hello world');"
+  },
+  "Find the day of year": {
+    "prefix": "dayOfYear",
+    "body": "const dayOfYear = (date) =>\n\tMath.floor((date - new Date(date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);\n\ndayOfYear(new Date());"
+  },
+  "Get the Current URL": {
+    "prefix": "currentURL",
+    "body": "const currentURL = () => window.location.href;\n\ncurrentURL();"
+  },
+  "find out if the browser tab of the page is focused?": {
+    "prefix": "isBrowserTabFocused",
+    "body": "const isBrowserTabFocused = () => !document.hidden;\n\nisBrowserTabFocused();"
+  },
+  "import": {
+    "prefix": "imp",
+    "body": "import ${2:moduleName} from '${1:module}';$0"
+  },
+  "importNoModuleName": {
+    "prefix": "imn",
+    "body": "import '${1:module}';$0"
+  },
+  "importDestructing": {
+    "prefix": "imd",
+    "body": "import{ $2 } from '${1:module}';$0"
+  },
+  "importEverything": {
+    "prefix": "ime",
+    "body": "import * as ${2:alias} from '${1:module}';$0"
+  },
+  "importAs": {
+    "prefix": "ima",
+    "body": "import{ ${2:originalName} as ${3:alias} } from '${1:module}';$0"
+  },
+  "require": {
+    "prefix": "rqr",
+    "body": "require('${1:package}');"
+  },
+  "requireToConst": {
+    "prefix": "req",
+    "body": "const ${1:packageName} = require('${1:package}');$0"
+  },
+  "moduleExports": {
+    "prefix": "mde",
+    "body": "module.exports ={\n\t$0\n};\n"
+  },
+  "addEventListener": {
+    "prefix": "ael",
+    "body": "${1:btn}.addEventListener(\"${2:click}\",()=>{\n\t$0\n});"
+  },
+  "exportNamedVariable": {
+    "prefix": "env",
+    "body": "export const ${1:exportVariable} = ${2:localVariable};\n"
+  },
+  "exportNamedFunction": {
+    "prefix": "enf",
+    "body": "export const ${1:functionName} = (${2:params}) =>{\n\t$0\n};\n"
+  },
+  "exportDefaultFunction": {
+    "prefix": "edf",
+    "body": "export default function ${1:${TM_FILENAME_BASE}}(${2:params}){\n\t$0\n};\n"
+  },
+  "exportClass": {
+    "prefix": "ecl",
+    "body": "export default class ${1:className}{\n\t$0\n};\n"
+  },
+  "exportClassExtends": {
+    "prefix": "ece",
+    "body": "export default class ${1:className} extends ${2:baseclassName}{\n\t$0\n};\n"
+  },
+  "constructor": {
+    "prefix": "con",
+    "body": "constructor(${1:params}){\n\t${0}\n}"
+  },
+  "method": {
+    "prefix": "met",
+    "body": "${1:methodName}(${2:params}){\n\t${0}\n}"
+  },
+  "propertyGet": {
+    "prefix": "pge",
+    "body": "get ${1:propertyName}(){\n\treturn this.${0};\n}"
+  },
+  "propertyset": {
+    "prefix": "pse",
+    "body": "set ${1:propertyName}(${2:value}){\n\t${0};\n}"
+  },
+  "forEach": {
+    "prefix": "fre",
+    "body": "${1:array}.forEach(${2:currentItem} =>{\n\t${0}\n});"
+  },
+  "forOf": {
+    "prefix": "fof",
+    "body": "for (const ${1:item} of ${2:object}){\n\t${0}\n}"
+  },
+  "forIn": {
+    "prefix": "fin",
+    "body": "for (const ${1:item} in ${2:object}){\n\t${0}\n}"
+  },
+  "anonymousFunction": {
+    "prefix": "anfn",
+    "body": "(${1:params}) =>{\n\t${2}\n}"
+  },
+  "namedFunction": {
+    "prefix": "nfn",
+    "body": "const ${1:name} = (${2:params}) =>{\n\t${3}\n}"
+  },
+  "destructingObject": {
+    "prefix": "dob",
+    "body": "const{${2:propertyName}} = ${1:objectToDestruct};"
+  },
+  "destructingArray": {
+    "prefix": "dar",
+    "body": "const[${2:propertyName}] = ${1:arrayToDestruct};"
+  },
+  "setInterval": {
+    "prefix": "sti",
+    "body": "setInterval(() =>{\n\t${2}\n}, ${0:intervalInms});"
+  },
+  "setTimeOut": {
+    "prefix": "sto",
+    "body": "setTimeout(() =>{\n\t${2}\n}, ${1:delayInms});"
+  },
+  "promise": {
+    "prefix": "prom",
+    "body": "return new Promise((resolve, reject) =>{\n\t${1}\n});"
+  },
+  "thenCatch": {
+    "prefix": "thenc",
+    "body": ".then((${1:result}) =>{\n\t${2}\n}).catch((${3:err}) =>{\n\t${4}\n});"
+  },
+  "consoleAssert": {
+    "prefix": "cas",
+    "body": "console.assert(${1:expression}, ${2:object});"
+  },
+  "consoleClear": {
+    "prefix": "ccl",
+    "body": "console.clear();"
+  },
+  "consoleCount": {
+    "prefix": "cco",
+    "body": "console.count(${1:label});"
+  },
+  "consoleDebug": {
+    "prefix": "cdb",
+    "body": "console.debug(${1:object});"
+  },
+  "consoleDir": {
+    "prefix": "cdi",
+    "body": "console.dir(${1:object});"
+  },
+  "consoleError": {
+    "prefix": "cer",
+    "body": "console.error(${1:object});"
+  },
+  "consoleGroup": {
+    "prefix": "cgr",
+    "body": "console.group('${1:label}');"
+  },
+  "consoleGroupEnd": {
+    "prefix": "cge",
+    "body": "console.groupEnd();"
+  },
+  "consoleLog": {
+    "prefix": "clg",
+    "body": "console.log(${1:object});"
+  },
+  "consoleLogObject": {
+    "prefix": "clo",
+    "body": "console.log('${1:object} :>> ', ${1:object});"
+  },
+  "consoleTrace": {
+    "prefix": "ctr",
+    "body": "console.trace(${1:object});"
+  },
+  "consoleWarn": {
+    "prefix": "cwa",
+    "body": "console.warn(${1:object});"
+  },
+  "consoleInfo": {
+    "prefix": "cin",
+    "body": "console.info(${1:object});"
+  },
+  "consoleTable": {
+    "prefix": "clt",
+    "body": "console.table(${1:object});"
+  },
+  "consoleTime": {
+    "prefix": "cti",
+    "body": "console.time(${1:object});"
+  },
+  "consoleTimeEnd": {
+    "prefix": "cte",
+    "body": "console.timeEnd(${1:object});"
+  }
+}

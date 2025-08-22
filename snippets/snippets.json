@@ -1,0 +1,16 @@
+// Created/Written by Tungsten
+{
+  "Tab Click": {
+    "prefix": "$",
+    "body": "${${1:0}:${2:}}"
+  },
+  "Boilerplate": {
+    "prefix": "\"\"",
+    "body": [
+      "\"$1\": {",
+      "\t\"prefix\": \"$2\",",
+      "\t\"body\": \"$3\"",
+      "},"
+    ]
+  }
+}

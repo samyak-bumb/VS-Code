@@ -1,0 +1,6 @@
+{
+  "Boilerplate": {
+    "prefix": "qphp",
+    "body": "<?php\n\t$0\n?>\n<!-- PHP Code -->"
+  },
+}

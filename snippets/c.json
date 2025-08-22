@@ -1,0 +1,148 @@
+// Created/Written by Tungsten
+{
+  "C Boilerplate": {
+    "prefix": "q",
+    "body": [
+      "#include <stdio.h>\n",
+      "int main()\n{\n\t$0\n",
+      "\treturn 0;\n}"
+    ],
+  },
+  "Print": {
+    "prefix": "pr",
+    "body": "printf($0);"
+  },
+  "Scan": {
+    "prefix": "sca",
+    "body": "scanf(\"$1\", &$0);"
+  },
+  "Intger": {
+    "prefix": "in",
+    "body": "int $0;"
+  },
+  "Float": {
+    "prefix": "flo",
+    "body": "float $0;"
+  },
+  "Double": {
+    "prefix": "dou",
+    "body": "double $0;"
+  },
+  "Character": {
+    "prefix": "cha",
+    "body": "char $0;"
+  },
+  "for": {
+    "prefix": "for",
+    "body": "for (${size_t} ${i} = ${1:0}; ${i} < ${2:length}; ${i}++)\n{\n\t$3\n}"
+  },
+  "forr": {
+    "prefix": "forr",
+    "body": "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--)\n{\n\t$3\n}"
+  },
+  "while": {
+    "prefix": "while",
+    "body": "while ($1)\n{\n\t$2\n}"
+  },
+  "do": {
+    "prefix": "do",
+    "body": "do\n{\n\t$1\n} while ($2);"
+  },
+  "if": {
+    "prefix": "if",
+    "body": "if ($1)\n{\n\t$2\n}"
+  },
+  "if else": {
+    "prefix": "ife",
+    "body": "if ($1)\n{\n\t$2\n}\nelse\n{\n\t$3\n}"
+  },
+  "else": {
+    "prefix": "else",
+    "body": "else\n{\n\t$0\n}"
+  },
+  "else if": {
+    "prefix": "elif",
+    "body": "else if ($1)\n{\n\t$2\n}"
+  },
+  "else if else": {
+    "prefix": "ifelif",
+    "body": "if ($1)\n{\n\t$2\n}\nelse if ($3)\n{\n\t$4\n}\nelse\n{\n\t$0\n}"
+  },
+  "enum": {
+    "prefix": "enum",
+    "body": "enum ${MyEnum}\n{\n\t01\n};"
+  },
+  "#ifdef": {
+    "prefix": "#ifdef",
+    "body": "#ifdef ${DEBUG}\n$1\n#endif // ${DEBUG}"
+  },
+  "#ifndef": {
+    "prefix": "#ifndef",
+    "body": "#ifndef ${1:1}\n"
+  },
+  "#if": {
+    "prefix": "#if",
+    "body": "#ifdef ${1:0}\n$2\n#endif // $1"
+  },
+  "struct": {
+    "prefix": "struct",
+    "body": "struct ${MyStruct}\n{\n\t$1\n};"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": "switch ($1)\n{\ncase $2:\n\t$0\n\tbreak;\n\ndefault:\n\tbreak;\n}"
+  },
+  "union": {
+    "prefix": "union",
+    "body": "union ${MyUnion}\n{\n\t$1\n};"
+  },
+  "#inc": {
+    "prefix": "#inc",
+    "body": "#include \"$0\""
+  },
+  "#inc<": {
+    "prefix": "#inc<",
+    "body": "#include <$0>"
+  },
+  "#def": {
+    "prefix": "#def",
+    "body": "#define \"$1\" \"$2\""
+  },
+  "comment_todo": {
+    "prefix": "comment_todo",
+    "body": "/**\n\n\tTODO:\n\t- ${1:First todo item}\n\t- ${2:Second todo item}\n\n */\n\n"
+  },
+  "comment_line": {
+    "prefix": "comment_line",
+    "body": "/* ${1:Comment} */\n\n${0}"
+  },
+  "comment_line_dash": {
+    "prefix": "comment_line_dash",
+    "body": "\n/*--------  ${1:Dash comment line}  --------*/\n${0}"
+  },
+  "comment_line_star": {
+    "prefix": "comment_line_star",
+    "body": "\n/*********  ${1:Dash comment line}  **********/\n${0}"
+  },
+  "comment_section": {
+    "prefix": "comment_section",
+    "body": [
+      "\n/**================================================== *",
+      " * ==========  ${1:Section comment block}  ========== *",
+      " * ================================================== */\n\n$0\n",
+      "/* =======  End of ${1:Section comment block}  ======= */"
+    ]
+  },
+  "comment_section_begin": {
+    "prefix": "comment_section_begin",
+    "body": [
+      "\n/**================================================== *",
+      " * ==========  ${1:Section comment block}  ========== *",
+      " * ================================================== */\n\n$0\n",
+    ]
+  },
+  "comment_section_end": {
+    "prefix": "comment_section_end",
+    "body": "\n/* =======  End of ${1:Section comment block}  ======= */\n\n"
+  }
+}
