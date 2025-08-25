@@ -1,171 +1,345 @@
 // Created/Written by Tungsten
 {
-  "Boilerplate": {
-    "prefix": "q",
-    "body": "#include <iostream>\nusing namespace std;\n\nint main()\n{\n\t$0\n\t\n\treturn 0;\n}"
-  },
-  "zfor": {
-    "prefix": "for",
-    "body": "for (${1:size_t} ${2:i} = ${3:0}; ${2:i} < ${4:length}; ${2:i}++)\n{\n\t$5\n}"
-  },
-  "forr": {
-    "prefix": "forr",
-    "body": "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--)\n{\n\t$3\n}"
-  },
-  "do": {
-    "prefix": "do",
-    "body": "do\n{\n\t$1\n} while($2);"
-  },
-  "while": {
-    "prefix": "while",
-    "body": "while ($1)\n{\n\t$2\n}"
-  },
-  "foreach": {
-    "prefix": "foreach",
-    "body": "for(auto ${var} : ${collection_to_loop})\n{\n\t$1\n}"
-  },
-  "if": {
-    "prefix": "if",
-    "body": "if ($1)\n{\n\t$2\n}"
-  },
-  "else": {
-    "prefix": "else",
-    "body": "else\n{\n\t$1\n}"
-  },
-  "else if": {
-    "prefix": "else if",
-    "body": "else if ($1)\n{\n\t$2\n}"
-  },
-  "enum": {
-    "prefix": "enum",
-    "body": "enum ${MyEnum}\n{\n\t$1\n};"
-  },
-  "enum class": {
-    "prefix": "enum class",
-    "body": "enum class ${MyClass} { };"
-  },
-  "class": {
-    "prefix": "class",
-    "body": "class ${MyClass}\n{\npublic:\n\t${MyClass}();\n\t${MyClass}(${MyClass} &&) = default;\n\t${MyClass}(const ${MyClass} &) = default;\n\t${MyClass} &operator=(${MyClass} &&) = default;\n\t${MyClass} &operator=(const ${MyClass} &) = default;\n\t~${MyClass}();\n\nprivate:\n\t$1\n};\n\n${MyClass}::${MyClass}()\n{\n}\n\n${MyClass}::~${MyClass}()\n{\n}"
-  },
-  "classi": {
-    "prefix": "classi",
-    "body": "class ${MyClass}\n{\npublic:\n\t${MyClass}() = default;\n\t${MyClass}(${MyClass} &&) = default;\n\t${MyClass}(const ${MyClass} &) = default;\n\t${MyClass} &operator=(${MyClass} &&) = default;\n\t${MyClass} &operator=(const ${MyClass} &) = default;\n\t~${MyClass}() = default;\n\nprivate:\n\t$1\n};"
-  },
-  "interface": {
-    "prefix": "interface",
-    "body": "__interface I${Interface}\n{\n\t$1\n};"
-  },
-  "namespace": {
-    "prefix": "namespace",
-    "body": "namespace ${MyNamespace}\n{\n\t$1\n}"
-  },
-  "#ifdef": {
-    "prefix": "#ifdef",
-    "body": "#ifdef ${DEBUG}\n$1\n#endif // ${DEBUG}"
-  },
-  "#ifndef": {
-    "prefix": "#ifndef",
-    "body": "#ifndef ${1:1}\n$2\n#endif // !$1"
-  },
-  "#if": {
-    "prefix": "#if",
-    "body": "#ifdef ${1:0}\n$2\n#endif // $1"
-  },
-  "struct": {
-    "prefix": "struct",
-    "body": "struct ${MyStruct}\n{\n\t$1\n};"
-  },
-  "switch": {
-    "prefix": "switch",
-    "body": "switch (${switch_on})\n{\ndefault:\n\tbreak;$1\n}"
-  },
-  "try": {
-    "prefix": "try",
-    "body": "try\n{\n}\ncatch (const std::exception&)\n{\n\t$1\n}"
-  },
-  "union": {
-    "prefix": "union",
-    "body": "union ${MyUnion}\n{\n\t$1\n};"
-  },
-  "cout": {
-    "prefix": "cout",
-    "body": "cout << $1 << endl;"
-  },
-  "cin": {
-    "prefix": "cin",
-    "body": "cin >> $0;"
-  },
-  "#inc": {
-    "prefix": "#inc",
-    "body": "#include \"$1\""
-  },
-  "#inc<": {
-    "prefix": "#inc<",
-    "body": "#include <$1>"
-  },
-  "#def": {
-    "prefix": "#def",
-    "body": "#define \"$1\" \"$2\""
-  },
-  "main": {
-    "prefix": "main",
-    "body": "int main(int argc, const char** argv) {\n\treturn 0;\n}"
-  },
-  "int": {
-    "prefix": "int",
-    "body": "int $0;"
-  },
-  "char": {
-    "prefix": "char",
-    "body": "char $0;"
-  },
-  "comment_block": {
-    "prefix": "comment_block",
-    "body": "/**\n *\n * ${1:Block comment}\n *\n */\n\n${0}"
-  },
-  "comment_todo": {
-    "prefix": "comment_todo",
-    "body": "/**\n\n\tTODO:\n\t- ${1:First todo item}\n\t- ${2:Second todo item}\n\n */\n\n"
-  },
-  "comment_line": {
-    "prefix": "comment_line",
-    "body": "/* ${1:Comment} */\n\n${0}"
-  },
-  "comment_line_dash": {
-    "prefix": "comment_line_dash",
-    "body": "\n/*--------  ${1:Dash comment line}  --------*/\n${0}"
-  },
-  "comment_line_star": {
-    "prefix": "comment_line_star",
-    "body": "\n/*********  ${1:Dash comment line}  **********/\n${0}"
-  },
-  "comment_section": {
-    "prefix": "comment_section",
-    "body": [
-      "\n/**================================================== *",
-      " * ==========  ${1:Section comment block}  ========== *",
-      " * ================================================== */\n\n$0\n",
-      "/* =======  End of ${1:Section comment block}  ======= */"
-    ]
-  },
-  "comment_section_begin": {
-    "prefix": "comment_section_begin",
-    "body": [
-      "\n/**================================================== *",
-      " * ==========  ${1:Section comment block}  ========== *",
-      " * ================================================== */\n\n$0\n",
-    ]
-  },
-  "comment_section_end": {
-    "prefix": "comment_section_end",
-    "body": "\n/* =======  End of ${1:Section comment block}  ======= */\n\n"
-  },
-
-
-  // C++ Algorithm Mnemonics
-
-/*
+	"Boilerplate": {
+		"prefix": "q",
+		"body": "#include <iostream>\nusing namespace std;\n\nint main()\n{\n\t$0\n\t\n\treturn 0;\n}"
+	},
+	"zfor": {
+		"prefix": "for",
+		"body": "for (${1:size_t} ${2:i} = ${3:0}; ${2:i} < ${4:length}; ${2:i}++)\n{\n\t$5\n}"
+	},
+	"forr": {
+		"prefix": "forr",
+		"body": "for (int ${i} = ${1:length} - 1; ${i} >= ${2:0}; ${i}--)\n{\n\t$3\n}"
+	},
+	"do": {
+		"prefix": "do",
+		"body": "do\n{\n\t$1\n} while($2);"
+	},
+	"while": {
+		"prefix": "while",
+		"body": "while ($1)\n{\n\t$2\n}"
+	},
+	"foreach": {
+		"prefix": "foreach",
+		"body": "for(auto ${var} : ${collection_to_loop})\n{\n\t$1\n}"
+	},
+	"if": {
+		"prefix": "if",
+		"body": "if ($1)\n{\n\t$2\n}"
+	},
+	"else": {
+		"prefix": "else",
+		"body": "else\n{\n\t$1\n}"
+	},
+	"else if": {
+		"prefix": "else if",
+		"body": "else if ($1)\n{\n\t$2\n}"
+	},
+	"enum": {
+		"prefix": "enum",
+		"body": "enum ${MyEnum}\n{\n\t$1\n};"
+	},
+	// "enum class": {
+	// 	"prefix": "enum class",
+	// 	"body": "enum class ${MyClass} { };"
+	// },
+	//   "class": {
+	//     "prefix": "class",
+	//     "body": "class ${MyClass}\n{\npublic:\n\t${MyClass}();\n\t${MyClass}(${MyClass} &&) = default;\n\t${MyClass}(const ${MyClass} &) = default;\n\t${MyClass} &operator=(${MyClass} &&) = default;\n\t${MyClass} &operator=(const ${MyClass} &) = default;\n\t~${MyClass}();\n\nprivate:\n\t$1\n};\n\n${MyClass}::${MyClass}()\n{\n}\n\n${MyClass}::~${MyClass}()\n{\n}"
+	//   },
+	//   "classi": {
+	//     "prefix": "classi",
+	//     "body": "class ${MyClass}\n{\npublic:\n\t${MyClass}() = default;\n\t${MyClass}(${MyClass} &&) = default;\n\t${MyClass}(const ${MyClass} &) = default;\n\t${MyClass} &operator=(${MyClass} &&) = default;\n\t${MyClass} &operator=(const ${MyClass} &) = default;\n\t~${MyClass}() = default;\n\nprivate:\n\t$1\n};"
+	//   },
+	"interface": {
+		"prefix": "interface",
+		"body": "__interface I${Interface}\n{\n\t$1\n};"
+	},
+	"namespace": {
+		"prefix": "namespace",
+		"body": "namespace ${MyNamespace}\n{\n\t$1\n}"
+	},
+	"#ifdef": {
+		"prefix": "#ifdef",
+		"body": "#ifdef ${DEBUG}\n$1\n#endif // ${DEBUG}"
+	},
+	"#ifndef": {
+		"prefix": "#ifndef",
+		"body": "#ifndef ${1:1}\n$2\n#endif // !$1"
+	},
+	"#if": {
+		"prefix": "#if",
+		"body": "#ifdef ${1:0}\n$2\n#endif // $1"
+	},
+	"struct": {
+		"prefix": "struct",
+		"body": "struct ${MyStruct}\n{\n\t$1\n};"
+	},
+	"switch": {
+		"prefix": "switch",
+		"body": "switch (${switch_on})\n{\ndefault:\n\tbreak;$1\n}"
+	},
+	"try": {
+		"prefix": "try",
+		"body": "try\n{\n}\ncatch (const std::exception&)\n{\n\t$1\n}"
+	},
+	"union": {
+		"prefix": "union",
+		"body": "union ${MyUnion}\n{\n\t$1\n};"
+	},
+	"cout": {
+		"prefix": "cout",
+		"body": "cout << $1 << endl;"
+	},
+	"cin": {
+		"prefix": "cin",
+		"body": "cin >> $0;"
+	},
+	"#inc": {
+		"prefix": "#inc",
+		"body": "#include \"$1\""
+	},
+	"#inc<": {
+		"prefix": "#inc<",
+		"body": "#include <$1>"
+	},
+	"#def": {
+		"prefix": "#def",
+		"body": "#define \"$1\" \"$2\""
+	},
+	"main": {
+		"prefix": "main",
+		"body": "int main(int argc, const char** argv) {\n\treturn 0;\n}"
+	},
+	"int": {
+		"prefix": "int",
+		"body": "int $0;"
+	},
+	"char": {
+		"prefix": "char",
+		"body": "char $0;"
+	},
+	"comment_block": {
+		"prefix": "comment_block",
+		"body": "/**\n *\n * ${1:Block comment}\n *\n */\n\n${0}"
+	},
+	"comment_todo": {
+		"prefix": "comment_todo",
+		"body": "/**\n\n\tTODO:\n\t- ${1:First todo item}\n\t- ${2:Second todo item}\n\n */\n\n"
+	},
+	"comment_line": {
+		"prefix": "comment_line",
+		"body": "/* ${1:Comment} */\n\n${0}"
+	},
+	"comment_line_dash": {
+		"prefix": "comment_line_dash",
+		"body": "\n/*--------  ${1:Dash comment line}  --------*/\n${0}"
+	},
+	"comment_line_star": {
+		"prefix": "comment_line_star",
+		"body": "\n/*********  ${1:Dash comment line}  **********/\n${0}"
+	},
+	"comment_section": {
+		"prefix": "comment_section",
+		"body": [
+			"\n/**================================================== *",
+			" * ==========  ${1:Section comment block}  ========== *",
+			" * ================================================== */\n\n$0\n",
+			"/* =======  End of ${1:Section comment block}  ======= */"
+		]
+	},
+	"comment_section_begin": {
+		"prefix": "comment_section_begin",
+		"body": [
+			"\n/**================================================== *",
+			" * ==========  ${1:Section comment block}  ========== *",
+			" * ================================================== */\n\n$0\n",
+		]
+	},
+	"comment_section_end": {
+		"prefix": "comment_section_end",
+		"body": "\n/* =======  End of ${1:Section comment block}  ======= */\n\n"
+	},
+	// Neww Cpp Code Snippets
+	"For Loop": {
+		"prefix": "forloop",
+		"body": [
+			"for (int ${1:i} = 0; ${1:i} < ${2:n}; ${1:i}++) {",
+			"    $0",
+			"}"
+		],
+		"description": "Create a for loop"
+	},
+	"Function Declaration": {
+		"prefix": "func",
+		"body": [
+			"${1:void} ${2:functionName}(${3:args}) {",
+			"    $0",
+			"}"
+		],
+		"description": "Create a function declaration"
+	},
+	"Function Inline": {
+		"prefix": "inline",
+		"body": [
+			"inline ${1:void}${2:Class}::${3:functionName}(${4:args}) {",
+			"    $0",
+			"}"
+		],
+		"description": "Create a function declaration"
+	},
+	"Class Definition": {
+		"prefix": "class",
+		"body": [
+			"class ${1:ClassName} {",
+			"public:",
+			"    ${1:ClassName}() {",
+			"        $0",
+			"    }",
+			"};"
+		],
+		"description": "Create a class definition"
+	},
+	"Cpp syntax": {
+		"prefix": "cpp",
+		"body": [
+			"#include<iostream>",
+			"using namespace std;",
+			"int main()",
+			"{",
+			"$0",
+			"return 0;",
+			"}"
+		],
+		"description": "Create a cpp "
+	},
+	"If Statement": {
+		"prefix": "if",
+		"body": [
+			"if (${1:condition}) {",
+			"    $0",
+			"}"
+		],
+		"description": "Create an if statement"
+	},
+	"Else If Statement": {
+		"prefix": "elseif",
+		"body": [
+			"else if (${1:condition}) {",
+			"    $0",
+			"}"
+		],
+		"description": "Create an else if statement"
+	},
+	"If Else Statement": {
+		"prefix": "ifelse",
+		"body": [
+			"if (${1:condition}) {",
+			"    $2",
+			"} else {",
+			"    $0",
+			"}"
+		],
+		"description": "Create an if-else statement"
+	},
+	"Nested For Loop": {
+		"prefix": "nested-for",
+		"body": [
+			"for (int i = 0; i < ${1:outer_limit}; i++) {",
+			"    for (int j = 0; j < ${2:inner_limit}; j++) {",
+			"        // Your code here",
+			"    }",
+			"}"
+		],
+		"description": "Insert a nested for loop"
+	},
+	"While Loop": {
+		"prefix": "nested-while",
+		"body": [
+			"while (${1:condition}) {",
+			"    // Your code here",
+			"}"
+		],
+		"description": "Insert a while loop"
+	},
+	"Do While Loop": {
+		"prefix": " nested-do",
+		"body": [
+			"do {",
+			"    // Your code here",
+			"} while (${1:condition});"
+		],
+		"description": "Insert a do while loop"
+	},
+	"Nested If Else": {
+		"prefix": "nested-if",
+		"body": [
+			"if (${1:condition1}) {",
+			"    // Code for condition1",
+			"    if (${2:condition2}) {",
+			"        // Code for condition2",
+			"    } else {",
+			"        // Code for else condition2",
+			"    }",
+			"} else {",
+			"    // Code for else condition1",
+			"}"
+		],
+		"description": "Insert a nested if-else structure"
+	},
+	"Switch Statement": {
+		"prefix": "switch-statement",
+		"body": [
+			"switch (${1:variable}) {",
+			"    case ${2:value1}:",
+			"        // Code for case value1",
+			"        break;",
+			"    case ${3:value2}:",
+			"        // Code for case value2",
+			"        break;",
+			"    default:",
+			"        // Code for default case",
+			"        break;",
+			"}"
+		],
+		"description": "Insert a switch statement"
+	},
+	"Union Definition": {
+		"prefix": "union",
+		"body": [
+			"union ${1:UnionName} {",
+			"    ${2:dataType1} ${3:member1};",
+			"    ${4:dataType2} ${5:member2};",
+			"    // Additional members",
+			"};"
+		],
+		"description": "Insert a union definition"
+	},
+	"Enum Definition": {
+		"prefix": "enum",
+		"body": [
+			"enum class ${1:EnumName} {",
+			"    ${2:Value1},",
+			"    ${3:Value2},",
+			"    ${4:Value3},",
+			"    // Additional values",
+			"};"
+		],
+		"description": "Insert an enum definition"
+	},
+	"Structure Definition": {
+		"prefix": "struct",
+		"body": [
+			"struct ${1:StructName} {",
+			"    ${2:dataType} ${3:memberName};",
+			"    // Additional members",
+			"};"
+		],
+		"description": "Insert a structure definition"
+	}
+	// C++ Algorithm Mnemonics
+	/*
 	"accumulate": {
 		"prefix": "acl",
 		"body": [

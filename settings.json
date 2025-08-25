@@ -16,9 +16,7 @@
     "editor.cursorStyle": "line-thin",
     "editor.inlineSuggest.enabled": true,
     "editor.fontWeight": "250",
-    "workbench.colorCustomizations": {
-
-    },
+    "workbench.colorCustomizations": {},
     // "window.title": "${rootName} - {'' Code_With_Samyak ''} 😁",
     "redhat.telemetry.enabled": false,
     "diffEditor.wordWrap": "off",
@@ -35,20 +33,18 @@
     // "workbench.preferredDarkColorTheme": "Cobalt2",
     "explorer.confirmDragAndDrop": false,
     "editor.bracketPairColorization.enabled": true,
-    "sync.gist": "88816cd80cbce279cb720be0abf23f8e",
+    "sync.gist": "920fb2ef1c4d7387d1997491cf1a352c",
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    "prettier.tabWidth": 3,
     "prettier.useTabs": true,
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "prettier.proseWrap": "never",
-    "prettier.useEditorConfig": false,
     "editor.tabSize": 3,
     "workbench.sideBar.location": "right",
-    "workbench.productIconTheme": "fluent-icons",
+    "workbench.productIconTheme": "icons-kamekazi-dark",
     "editor.rename.enablePreview": false,
     "editor.suggest.preview": false,
     "workbench.editor.enablePreview": false,
@@ -56,7 +52,6 @@
     "extensions.autoCheckUpdates": false,
     "extensions.autoUpdate": false,
     "prettier.quoteProps": "preserve",
-    "prettier.enable": false,
     "prettier.endOfLine": "cr",
     "prettier.htmlWhitespaceSensitivity": "strict",
     "prettier.bracketSpacing": false,
@@ -82,18 +77,35 @@
     "github.gitAuthentication": false,
     "workbench.startupEditor": "none",
     "editor.insertSpaces": false,
-    "workbench.colorTheme": "Night Owl",
     "terminal.integrated.env.windows": {},
     "telemetry.telemetryLevel": "off",
     "database-client.autoSync": true,
-    "workbench.statusBar.visible": false,
     "editor.lineNumbers": "on",
     "chat.agent.enabled": false,
     "chat.checkpoints.enabled": false,
     "chat.commandCenter.enabled": false,
     "chat.detectParticipant.enabled": false,
-    "workbench.activityBar.location": "hidden",
     "workbench.editor.empty.hint": "hidden",
     "code-runner.runInTerminal": true,
-    "code-runner.saveFileBeforeRun": true
+    "code-runner.saveFileBeforeRun": true,
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "sync.forceUpload": true,
+    "security.workspace.trust.enabled": false,
+    "sync.quietSync": true,
+    "breadcrumbs.enabled": false,
+    "code-runner.preserveFocus": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "prettier.useEditorConfig": false,
+    "autoSemicolon.supportedLanguageId.ignores.quotes": false,
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.location": "hidden",
+    "workbench.editor.showTabs": "none",
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "window.menuBarVisibility": "toggle"
+    // "debug.allowBreakpointsEverywhere": false
 }
